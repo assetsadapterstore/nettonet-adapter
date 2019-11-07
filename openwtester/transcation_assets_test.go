@@ -120,16 +120,18 @@ func testSubmitTransactionStep(tm *openw.WalletManager, rawTx *openwallet.RawTra
 func TestTransfer_NTN(t *testing.T) {
 
 	addrs := []string{
-		"0x86b887251fd50c1a8777c02857f430ce112dced8",
-		"0xc0bdaae19f31abd801291172d434b366256baa32",
-		"0xb3377952b690187e8b042e30b2a1afc0c6ce7e81",
-		"0x95b2ae4609abec5238b268baadce3feeeb0ae182",
-		"0xfc3462edb9836d815af84daf868df11ea483aad0",
-		"0x0c27e32d7502dad762df0f83d4ecf6e5f8c26636",
-		"0x7a9e5283f2b150716f45240e04a0848c63e77fa4",
-		"0xe48e16b2d32ba89896cc6d8e058feacde09b1ba6",
-		"0xf66c46617094b36b7cae1d97956d5d0e2fd3c824",
-		"0x0191c1a14e16a3f64a6617d9764c5efddbc9176e",
+		//"0x86b887251fd50c1a8777c02857f430ce112dced8",
+		//"0xc0bdaae19f31abd801291172d434b366256baa32",
+		//"0xb3377952b690187e8b042e30b2a1afc0c6ce7e81",
+		//"0x95b2ae4609abec5238b268baadce3feeeb0ae182",
+		//"0xfc3462edb9836d815af84daf868df11ea483aad0",
+		//"0x0c27e32d7502dad762df0f83d4ecf6e5f8c26636",
+		//"0x7a9e5283f2b150716f45240e04a0848c63e77fa4",
+		//"0xe48e16b2d32ba89896cc6d8e058feacde09b1ba6",
+		//"0xf66c46617094b36b7cae1d97956d5d0e2fd3c824",
+		//"0x0191c1a14e16a3f64a6617d9764c5efddbc9176e",
+
+		"0x21d25f3c33208738900a64d4dd45ec4e6c9ef929",
 	}
 
 	tm := testInitWalletManager()
@@ -139,7 +141,7 @@ func TestTransfer_NTN(t *testing.T) {
 	testGetAssetsAccountBalance(tm, walletID, accountID)
 
 	for _, to := range addrs {
-		rawTx, err := testCreateTransactionStep(tm, walletID, accountID, to, "0.123456", "", nil)
+		rawTx, err := testCreateTransactionStep(tm, walletID, accountID, to, "0.1", "", nil)
 		if err != nil {
 			return
 		}
